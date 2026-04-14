@@ -45,6 +45,10 @@
                     for (int j = 0; j < n; j++)
                         if (A_dir1[i, j] == 1) { A_undir1[i, j] = 1; A_undir1[j, i] = 1; }
 
+                Console.WriteLine("Task 1");
+                PrintMatrixToConsole(A_dir1, "Directed Graph (A_dir1)");
+                PrintMatrixToConsole(A_undir1, "Undirected Graph (A_undir1)");
+
                 Console.WriteLine("\nTask 2");
                 int[] inDeg = new int[n], outDeg = new int[n], degU = new int[n];
                 for (int i = 0; i < n; i++)
@@ -64,7 +68,10 @@
                 for (int i = 0; i < n; i++) if (degU[i] == 1) Console.Write($"{i + 1} ");
                 Console.WriteLine();
 
+                Console.WriteLine("\nTask 3");
                 A_dir2 = GenerateMatrix(5344, 0.69);
+                PrintMatrixToConsole(A_dir2, "Directed Graph (A_dir2)");
+
                 Console.WriteLine("\nTask 4");
 
                 Console.WriteLine("\nPaths of length 2:");
@@ -133,6 +140,19 @@
                 cCond = new PointF[numCond];
                 for (int i = 0; i < numCond; i++)
                     cCond[i] = new PointF(850 + (float)(Math.Cos(2 * Math.PI * i / numCond) * 150), 675 + (float)(Math.Sin(2 * Math.PI * i / numCond) * 150));
+            }
+
+            private void PrintMatrixToConsole(int[,] matrix, string title)
+            {
+                Console.WriteLine($"\n=== {title} ===");
+                int n = matrix.GetLength(0);
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < n; j++)
+                        Console.Write(string.Format("{0,2} ", matrix[i, j]));
+                    Console.WriteLine();
+                }
             }
 
             protected override void OnPaint(PaintEventArgs e)

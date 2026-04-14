@@ -37,6 +37,9 @@ namespace ASDLabsForms.Labs
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
                     if (A_dir[i, j] == 1) { A_undir[i, j] = 1; A_undir[j, i] = 1; }
+
+            PrintMatrixToConsole(A_dir, "Directed Graph (A_dir)");
+            PrintMatrixToConsole(A_undir, "Undirected Graph (A_undir)");
         }
 
         private void CalculateTriangleCoords()
@@ -59,6 +62,19 @@ namespace ASDLabsForms.Labs
                     coordsUndir[idx] = new PointF(coordsDir[idx].X + 600, coordsDir[idx].Y);
                     idx++;
                 }
+            }
+        }
+
+        private void PrintMatrixToConsole(int[,] matrix, string title)
+        {
+            Console.WriteLine($"\n=== {title} ===");
+            int n = matrix.GetLength(0);
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                    Console.Write(string.Format("{0,2} ", matrix[i, j]));
+                Console.WriteLine();
             }
         }
 
