@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ASD_Labs;
 using ASDLabsForms.Labs;
 using ASDLabsForms.Labs.ASD_Labs;
 
@@ -15,10 +16,10 @@ namespace ASDLabsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Lab3Form());
-            Application.Run(new Lab4Form());
-            // Application.Run(new Lab5Form());
-            Application.Run(new Lab6Form());
+            //Application.Run(new Lab3Form());
+            //Application.Run(new Lab4Form());
+            Application.Run(new Lab5Form());
+            //Application.Run(new Lab6Form());
         }
     }
 }
